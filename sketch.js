@@ -3,10 +3,12 @@ let velX, velY;
 let diametro;
 let radio;
 let fondoCambiable;
+//crear nueva pelota
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   fondoCambiable = color(random(153, 255), random(115), random(191));
+  //declarar la nueva pelota
 
   radio = ceil(random(20, 50));
   diametro = radio * 2;
@@ -23,6 +25,7 @@ function setup() {
 
 function draw() {
   background(fondoCambiable);
+  // update y display de la nueva pelota
   fill(63, 3, 89);
   noStroke();
 
@@ -40,4 +43,21 @@ function draw() {
     fondoCambiable = color(random(153, 255), random(115), random(191));
   }
   circle(posX, posY, diametro);
+}
+
+class Pelota {
+  // Plano de instrucciones para crear una pelota
+  constructor() {
+    //todas las variables y declararlas a la vez
+  }
+
+  // método update
+
+  update() {
+    // sistema de colisión de la pelota
+  }
+
+  display() {
+    // dibujar la pelota
+  }
 }
