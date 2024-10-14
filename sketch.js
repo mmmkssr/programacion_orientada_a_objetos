@@ -1,66 +1,30 @@
-let fondoCambiable;
-let pelotas = [];
+//let particula1;
+//let particula2;
+let particulas = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  fondoCambiable = color(random(153, 255), random(115), random(191));
+  //particula1 = new Particula("Juan");
+  //particula2 = new Particula("Mercedes");
 
-  for (let i = 0; i < 100; i++) {
-    let nuevaPelota = new Pelota();
-    pelotas.push(nuevaPelota);
-  }
-
-  // New = nomenclatura - js ejecuta la función constructor
+  //particula1.nombre = "Pedro";
 }
 
 function draw() {
-  background(fondoCambiable);
-  for (let i = 0; i < 100; i++) {
-    pelotas[i].update();
-    pelotas[i].display();
-  }
-  // update y display de la nueva pelota
-}
-class Pelota {
-  // Plano de instrucciones para crear una pelota
+  background(140, 39, 69);
+  let nuevaParticula = new Particula(mouseX, mouseY);
+  particulas.push(nuevaParticula);
 
-  constructor() {
-    // Se ejecuta automáticamente al crear una nueva pelota
-    // Función interna que se ejecuta al momento de crear la clase
-    // this = forma de decir a js que los objetos están dentro del objeto pelota
-
-    // Todas las variables y declararlas a la vez
-    this.radio = ceil(random(20, 30));
-    this.diametro = this.radio * 2;
-    this.posX = random(this.radio, width - this.radio);
-    this.posY = random(this.radio, height - this.radio);
-    this.velX = random(-10, 10);
-    this.velY = random(-10, 10);
-    console.log("estoy viva!");
+  for (let i = 0; i < particulas.length; i++) {
+    particulas[i].update();
+    particulas[i].display();
   }
 
-  // método update - función interna del objeto pelota
-
-  update() {
-    // sistema de colisión de la pelota
-
-    this.posX += this.velX;
-    this.posY += this.velY;
-
-    if (this.posX > width - this.radio || this.posX < this.radio) {
-      this.velX *= -1;
+  for (let i = 0; i < particulas.length; i++) {
+    if (!particulas[i].estaViva) {  //! pregunta lo contrario
+      particulas.splice(i, 1);
     }
-
-    if (this.posY > height - this.radio || this.posY < this.radio) {
-      this.velY *= -1;
-    }
+    //else se ejecuta si es que no está viva la pelota
   }
-
-  display() {
-    // dibujar la pelota
-
-    fill(63, 3, 89);
-    noStroke();
-    circle(this.posX, this.posY, this.diametro);
-  }
+  console.log(particulas.length);
 }
