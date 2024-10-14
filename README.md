@@ -13,12 +13,12 @@ Cuando un array tiene demasiados elementos se utiliza un `for loop` de la siguie
 for (let i = 0; i < frutas.length; i += 20)
 ```
 
-## Bucle
+## for loop
 
 ### Primera declaración:
 
 `for` acompañado siempre de un paréntesis ().
-Variable `i` / nombre arbitrario
+Variable `i` / nombre arbitrario - puede ser cualquier mombre
 Variable `let` / número = índice del array
 
 ### Segunda declaración: Comparación
@@ -31,9 +31,8 @@ declaración: i += 1 Se ejecuta cada que termina un ciclo del bucle
 
 ## Class
 
-
 ### Constructor
 
 Función interna / variables no con `let` / `this.`
 
-update / display = métodos 
+update / display = métodos
