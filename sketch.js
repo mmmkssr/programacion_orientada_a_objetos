@@ -21,7 +21,8 @@ function draw() {
   }
 
   for (let i = 0; i < particulas.length; i++) {
-    if (!particulas[i].estaViva) {  //! pregunta lo contrario
+    if (!particulas[i].estaViva) {
+      //! pregunta lo contrario
       particulas.splice(i, 1);
     }
     //else se ejecuta si es que no está viva la pelota
