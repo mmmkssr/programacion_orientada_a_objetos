@@ -6,7 +6,7 @@ class Particula {
     this.posY = _y;
     this.estaViva = true;
     //tVida es el tiempo de vida
-    this.tVida = round(random(10, 20));
+    this.tVida = round(random(10, 50));
 
     //generar una variable única para cada objeto
   }
@@ -18,13 +18,19 @@ class Particula {
       return;
     }
 
-    this.posY += 2;
-    this.posX += random(10, 10);
+    this.posY += 4;
+    this.posX += -10;
   }
 
   display() {
-    fill(0);
+    // Cambia el color a la caída de las partículas
+    let colorR = map(this.tVida, 0, 30, 255, 0); // Rojo disminuye con el tiempo
+    let colorG = map(this.tVida, 0, 30, 0, 255); // Verde aumenta con el tiempo
+    let colorB = random(0, 255); // Color aleatorio para el componente azul
+    fill(colorR, colorG, colorB);
+
     noStroke();
-    circle(this.posX, this.posY, 20);
+    noCursor();
+    circle(this.posX, this.posY, this.tVida);
   }
 }
