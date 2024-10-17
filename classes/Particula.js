@@ -7,6 +7,8 @@ class Particula {
     this.estaViva = true;
     //tVida es el tiempo de vida
     this.tVida = round(random(10, 50));
+    //this.tamano = 1;
+    //this.opacidad = 100;
 
     //generar una variable única para cada objeto
   }
@@ -18,8 +20,15 @@ class Particula {
       return;
     }
 
-    this.posY += 4;
+    //if(this.posY < this.tamano / 2) {
+    //  this.estaViva = false;
+    //  return;
+    //}
+
+    this.posY -= 2;
     this.posX += -10;
+    //this.opacidad -= 0.5;
+    //this.tamamo = 0.5;
   }
 
   display() {
@@ -32,5 +41,7 @@ class Particula {
     noStroke();
     noCursor();
     circle(this.posX, this.posY, this.tVida);
+
+    //fill(0,opacidad)
   }
 }

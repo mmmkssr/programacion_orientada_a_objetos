@@ -14,6 +14,16 @@ function draw() {
     particulas[i].display();
   }
 
+  /**
+   * Esta es una forma de borrar las partículas muertas utilizando
+   * un for loop que navega todas las partículas y se pregunta
+   * por la variable boleana estaViva.
+   * 
+   * Utiliza la función splice para borrar la partícula específica
+   * mediante su indice
+   */
+
+  
   for (let i = 0; i < particulas.length; i++) {
     if (!particulas[i].estaViva) {
       //! pregunta lo contrario
