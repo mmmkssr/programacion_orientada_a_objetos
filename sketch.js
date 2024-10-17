@@ -20,6 +20,9 @@ function draw() {
       particulas.splice(i, 1);
     }
     //else se ejecuta si es que no está viva la pelota
+
+    //particulas = particulas.filter((pelota) => pelota.estaViva);
+    //código escrito de forma más eficiente
   }
   console.log(particulas.length);
 }

@@ -36,3 +36,18 @@ declaración: i += 1 Se ejecuta cada que termina un ciclo del bucle
 Función interna / variables no con `let` / `this.`
 
 update / display = métodos
+
+## Funciones Anónimas
+
+```html
+let b = true;
+b = !b;
+```
+El signo de admiración pregunta lo contrario a la variable, si es verdadera, resulta falsa.
+
+***Arrow funtion*** `=>`
+
+const = constante
+let en lugar de const
+
+
